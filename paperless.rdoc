@@ -1,0 +1,5 @@
+= paperless
+
+Generate this with
+    paperless rdoc
+After you have described your command line interface

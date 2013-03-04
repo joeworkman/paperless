@@ -1,0 +1,6 @@
+= paperless
+
+Describe your project here
+
+:include:paperless.rdoc
+

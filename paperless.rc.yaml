@@ -1,0 +1,44 @@
+---
+:ocr_engine: pdfpenpro
+:date_locale: us
+:date_format: '%Y-%m-%d'
+:date_default: filedate
+:destination: '@Inbox'
+:text_ext: txt md mmd
+:html_ext: html htm
+:simulate: false
+:service: evernote
+:rules:
+ - 
+   scope: content
+   condition: <date>
+ - 
+   scope: content filename
+   condition: Fran\w+
+   tags: <match>
+ - 
+   scope: content 
+   condition: American Funds
+   tags: retirement
+   notebook: '@Inbox'
+   title: '<match> Statement'
+...
+
+# Sample config with explanation 
+#
+:ocr: pdfpenpro || pdfpenpro || none
+:date_format: us || euro
+:date_default: filedate || today
+:text_ext: txt md mmd
+:html_ext: html htm
+:simulate: false
+:destination: '@Inbox' (Evernote = notebook, Finder = Folder path)
+:service: evernote (no others supported for now)
+ - 
+   scope: content || filename
+   condition: Fran\w+ (Words or Regex. <date> is the special condition that will search for the date within scope and set it to the creation date.)
+   tags: tag1 tag2 
+   notebook: '@Inbox' (must put special chars in quotes)
+   title: '<date=%Y-%m> Statement' (<date> with special fomat string. This can be used in any field.)
+   date: <match> (the <match> var places the text that the condition matches. This can be used in any field.)
+   service: evernote (Overwrite global setting.)

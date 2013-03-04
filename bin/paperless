@@ -1,0 +1,222 @@
+#!/usr/bin/env ruby
+require 'gli'
+require 'yaml'
+
+# begin # XXX: Remove this begin/rescue before distributing your app
+require 'paperless'
+# rescue LoadError
+#   STDERR.puts "In development, you need to use `bundle exec bin/paperless` to run your app"
+#   STDERR.puts "At install-time, RubyGems will make sure lib, etc. are in the load path"
+#   STDERR.puts "Feel free to remove this message from bin/paperless now"
+#   exit 64
+# end
+
+include GLI::App
+
+program_desc 'A command-line interface for Paperless workflows that apply rules in order to auto-sort notes into notebooks/folders.'
+
+version Paperless::VERSION
+
+config_file '.paperless.rc.yaml'
+
+desc 'Tell the configured service to sync after the command completes'
+switch :sync
+
+desc 'Only print what would be done. Nothing actually gets modified.'
+switch :simulate
+
+desc 'The name of the app to OCR pdf documents (pdfpen|pdfpenpro|none)'
+default_value 'none'
+arg_name 'OCR App'
+flag :ocr_engine
+
+desc 'A list of file extenstions that will be treated as text.'
+default_value 'txt md mmd'
+arg_name 'Text extensions'
+flag :text_ext
+
+desc 'A list of file extenstions that will be treated as HTML.'
+default_value 'html htm'
+arg_name 'HTML extensions'
+flag :html_ext
+
+desc 'The path to a new rules file. If not defined, the global rules from the config file will be used.'
+default_value ''
+arg_name 'Rules file'
+flag :rules
+
+desc 'The application where the document will be added to.'
+default_value 'evernote'
+arg_name 'Services'
+flag :service
+
+desc 'The default format for the date when inserted using <date> variable.'
+default_value '%Y-%m-%d'
+arg_name 'Date Format'
+flag :date_format
+
+desc 'The locale format of the date: "us" or "euro"'
+default_value 'us'
+arg_name 'Date Locale'
+flag :date_locale
+
+desc 'If the date cannot be discovered within the doucment contents, then use "filedate" or "today" as the default.'
+default_value 'filedate'
+arg_name 'Date Default'
+flag :date_default
+
+desc 'Default notebook to add notes into'
+default_value 'Inbox'
+arg_name 'Notebook'
+flag :notebook
+
+pre do |global,command,options,args|
+  # Pre logic here
+  # Return true to proceed; false to abort and not call the
+  # chosen command
+  # Use skips_pre before a command to skip this block
+  # on that command only
+  global_options[:text_ext] = global_options[:text_ext].split
+  global_options[:html_ext] = global_options[:html_ext].split
+
+  # Load new rules file is passed
+  if global_options[:rules].class.to_s.match('String')
+      if File.exists?(File.expand_path global_options[:rules]) 
+        yaml = YAML.load File.expand_path global_options[:rules]
+        global_options[:rules] = yaml[:rules]
+      else
+        global_options[:rules] = Array.new
+      end
+  end
+
+  puts global_options.inspect
+
+  true
+end
+
+post do |global,command,options,args|
+  # Post logic here
+  # Use skips_post before a command to skip this
+  # block on that command only
+
+  # Run Sync if its requested
+
+end
+
+on_error do |exception|
+  # Error logic here
+  # return false to skip default error handling
+
+  puts "There was an error processing the command."
+
+  true
+end
+
+# Append Command
+desc 'Append data to the end of an existing note.'
+arg_name 'note_name'
+command :append do |c|
+
+  c.action do |global_options,options,args|
+
+  end
+end
+
+# Assign Command
+desc 'Assign a tag to an existing note.'
+arg_name 'tag_name', :multiple
+command :assign do |c|
+
+  c.action do |global_options,options,args|
+
+  end
+end
+
+# Create Command
+desc 'Create a new note'
+arg_name 'file_name'
+command :create do |c|
+
+  c.desc 'Process the file through the rules.'
+  c.switch :rules, :default_value => true
+
+  c.desc 'OCR the document if its a PDF'
+  c.switch :ocr, :default_value => false
+
+  c.action do |global_options,options,args|
+
+    args.each do |file|
+
+      if File.exists?(File.expand_path file) 
+        file = File.expand_path file
+      else
+        raise "File does not exist (#{file})"
+      end
+
+      engine = Paperless::Engine.new({
+        :file         => file,
+        :ocr_engine   => global_options[:ocr_engine],
+        :text_ext     => global_options[:text_ext],
+        :html_ext     => global_options[:html_ext],
+        :destination  => global_options[:destination],
+        :date_format  => global_options[:date_format],
+        :date_locale  => global_options[:date_locale],
+        :date_default => global_options[:date_default],
+        :default_notebook => global_options[:notebook],
+        :rules        => global_options[:rules]
+      })
+
+      file_ext = File.extname(file).gsub(/\./,'')
+      if file_ext == Paperless::PDF_EXT && options[:ocr]
+        puts "OCRing file..."
+        engine.ocr
+      end
+
+      if options[:rules]
+        puts "Processing rules..."
+        engine.process_rules 
+      end
+
+      if global_options[:simulate]
+        puts "Simulating changes..."
+        engine.print
+      else
+        puts "Create note for file: #{file}"
+        engine.create
+      end
+    end
+  end
+end
+
+# Info Command
+desc 'Get Evernote account Info'
+arg_name 'note_name'
+command :info do |c|
+
+  c.action do |global_options,options,args|
+
+  end
+end
+
+# Search Command
+desc 'Search for a note in Evernote and perform actions on them.'
+arg_name 'note_name'
+command :search do |c|
+
+  c.action do |global_options,options,args|
+
+  end
+end
+
+# Unassign Command
+desc 'Remove tags from a note.'
+arg_name 'note_name'
+command :unassign do |c|
+
+  c.action do |global_options,options,args|
+
+  end
+end
+
+
+exit run(ARGV)

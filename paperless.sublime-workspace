@@ -1,0 +1,1020 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ocr",
+				"ocr_engine"
+			],
+			[
+				"en",
+				"engine"
+			],
+			[
+				"min",
+				"minimize"
+			],
+			[
+				"PD",
+				"PDFPEN"
+			],
+			[
+				"oc",
+				"ocr_engine"
+			],
+			[
+				"date_",
+				"date_stamp"
+			],
+			[
+				"da",
+				"date_stamp"
+			],
+			[
+				"dat",
+				"date"
+			],
+			[
+				"defa",
+				"date_default"
+			],
+			[
+				"sub",
+				"sub_var"
+			],
+			[
+				"matc",
+				"matched"
+			],
+			[
+				"Date",
+				"DateTime"
+			],
+			[
+				"val",
+				"valid_month"
+			],
+			[
+				"va",
+				"valid_year"
+			],
+			[
+				"date",
+				"date_locale"
+			],
+			[
+				"end",
+				"end_date"
+			],
+			[
+				"mon",
+				"month_word"
+			],
+			[
+				"Ever",
+				"EvernoteMac"
+			],
+			[
+				"each",
+				"each_value"
+			],
+			[
+				"match",
+				"match_text"
+			],
+			[
+				"fil",
+				"file_ext"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"js",
+				"jstalk_source"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"false",
+				"false"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"query",
+				"query_info"
+			],
+			[
+				"met",
+				"method"
+			],
+			[
+				"map",
+				"map_url"
+			],
+			[
+				"cach",
+				"cache_img"
+			],
+			[
+				"cah",
+				"cache_img"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"response",
+				"responseText"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"pos",
+				"pos_top"
+			],
+			[
+				"scroll",
+				"scrollTop"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"pa",
+				"pause"
+			],
+			[
+				"utf8",
+				"utf8_decode"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"csv",
+				"csv_path"
+			],
+			[
+				"is",
+				"issue"
+			],
+			[
+				"issu",
+				"issue_id"
+			],
+			[
+				"mileston",
+				"milestone"
+			],
+			[
+				"git2bit",
+				"git2bit"
+			],
+			[
+				"_stak",
+				"_stake_options_cache"
+			],
+			[
+				"html_pre",
+				"html_press_fix"
+			],
+			[
+				"new",
+				"new_notes"
+			],
+			[
+				"notes",
+				"notes_content"
+			],
+			[
+				"ver",
+				"version_str"
+			],
+			[
+				"rel",
+				"release_notes"
+			],
+			[
+				"nil",
+				"nil"
+			],
+			[
+				"php",
+				"php_req"
+			],
+			[
+				"compil",
+				"compiled_stack"
+			],
+			[
+				"produc",
+				"product_name"
+			],
+			[
+				"to",
+				"to_s"
+			],
+			[
+				"page",
+				"page_name"
+			],
+			[
+				"released_",
+				"released_stack"
+			],
+			[
+				"dir",
+				"dirname"
+			],
+			[
+				"to_",
+				"to_xml"
+			],
+			[
+				"ar",
+				"archive"
+			],
+			[
+				"fina",
+				"final_stack"
+			],
+			[
+				"fin",
+				"final_stack"
+			],
+			[
+				"defaul",
+				"default_value"
+			],
+			[
+				"s3",
+				"s3_url"
+			],
+			[
+				"cart",
+				"cartloom_api"
+			],
+			[
+				"vp",
+				"vpdoc"
+			],
+			[
+				"release",
+				"release_notes"
+			],
+			[
+				"tu",
+				"tumblr_url"
+			],
+			[
+				"zd_",
+				"zd_field"
+			],
+			[
+				"zd",
+				"zd_token"
+			],
+			[
+				"bb",
+				"bb_repo"
+			],
+			[
+				"option",
+				"options"
+			],
+			[
+				"stack",
+				"stacks_version"
+			],
+			[
+				"docume",
+				"documents"
+			],
+			[
+				"docu",
+				"documents"
+			],
+			[
+				"sett",
+				"settings_doc"
+			],
+			[
+				"settings",
+				"settings_doc"
+			],
+			[
+				"defau",
+				"default_title"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"setting",
+				"settings_store"
+			],
+			[
+				"set",
+				"setting"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"info",
+				"info_url"
+			],
+			[
+				"jo",
+				"join"
+			],
+			[
+				"compone",
+				"components"
+			],
+			[
+				"com",
+				"component"
+			],
+			[
+				"tuml",
+				"tumblr_creds"
+			],
+			[
+				"not",
+				"notes_html"
+			],
+			[
+				"no",
+				"notes_md"
+			],
+			[
+				"temp",
+				"temp_file"
+			],
+			[
+				"gener",
+				"generate_zip"
+			],
+			[
+				"version",
+				"version_str"
+			],
+			[
+				"zip",
+				"zip_file"
+			],
+			[
+				"base",
+				"base_dir"
+			],
+			[
+				"path",
+				"path"
+			],
+			[
+				"app",
+				"appcast_file"
+			],
+			[
+				"se",
+				"secret_key"
+			],
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"res",
+				"resources_dir"
+			],
+			[
+				"comp",
+				"compile_stack"
+			],
+			[
+				"veri",
+				"verify_stack"
+			],
+			[
+				"dmg_",
+				"dmg_templ"
+			],
+			[
+				"glob",
+				"global_options"
+			],
+			[
+				"w",
+				"w	attr_writer .."
+			],
+			[
+				"stac",
+				"stack"
+			],
+			[
+				"s3_",
+				"s3_secret_key"
+			],
+			[
+				"public",
+				"public_read"
+			],
+			[
+				"dmg",
+				"dmg_path"
+			],
+			[
+				"vol",
+				"vol_path"
+			],
+			[
+				"DMG",
+				"DMG_EXT"
+			],
+			[
+				"install",
+				"install_dir"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "bin/paperless",
+			"settings":
+			{
+				"buffer_size": 5440,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/paperless/engine.rb",
+			"settings":
+			{
+				"buffer_size": 6395,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "module PaperlessService\n	class Evernote\n\n		def initialize(options)\n			# @todo: Add logic to validate rule has proper settings\n\n			@scope 		 = options['scope'].split\n			@condition = options['condition']\n			@notebook  = options['notebook']\n			@service  = options['service']\n			@title 		 = options['title']\n			@date 		 = options['date']\n			@tags			 = options['tags'].nil? ? Array.new : options['tags'].split\n			@date_stamp = DateTime.now\n			@date_default = '%Y-%m-%d'\n			@matched   = false\n		end\n\n	end\nend",
+			"file": "lib/paperless/services/evernote.rb",
+			"file_size": 48,
+			"file_write_time": 1362283984000000,
+			"settings":
+			{
+				"buffer_size": 502,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 189.0,
+		"selected_items":
+		[
+			[
+				"css",
+				"Tidy CSS"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: List Packages"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				":s/",
+				"Snippet: sub(/../) { |match| .. }"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpenpro.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/constants.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/paperless.gemspec",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpen.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/acrobat.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/services/evernote.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/services/devonthink.rb",
+		"/Volumes/MacRAID/joeworkman/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/release_notes-v3.4.9.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/style.css",
+		"/Applications/VoodooPad.app/Contents/Resources/VoodooPad.sdef",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/stake/.gitignore",
+		"/Volumes/MacRAID/joeworkman/.rvm/gems/ruby-1.9.3-p194/gems/rb-appscript-0.6.1/lib/appscript.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/YouTube/YouTube.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Video/HTML5Video.source/Contents/Resources/release_notes-v3.3.3.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Audio/HTML5Audio.source/Contents/Resources/release_notes-v2.2.3.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Video/HTML5Video.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Audio/HTML5Audio.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/stake/lib/stake/stack.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/stake/lib/stake/version.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/quickpics-images/left-arrow.png",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Cycler3/Cycler3.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Cycler3/Cycler3.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/release_notes-v3.4.8.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-360/Fancy-Image-360.source/Contents/Resources/release_notes-v2.1.5.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Video/HTML5Video.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Audio/HTML5Audio.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Video/HTML5Video.source/Contents/Resources/release_notes-v3.3.2.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Audio/HTML5Audio.source/Contents/Resources/release_notes-v2.2.2.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/quickpics-lib/CurlHttpClient.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/quickpics-lib/JsonQueryManager.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Resources/quickpics-lib/Instagram.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/PowerGrid-CSV/PowerGrid-CSV.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Mask/Mask.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Mask/Mask.source/Contents/Resources/release_notes-v1.1.3.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Resources/release_notes-v2.5.1.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/Resources/release_notes-v2.4.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/ExposeImagePro.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Desktop/after.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Totem/Totem.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Totem/Totem.source/Contents/TotemRSS.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Totem/Totem.source/Contents/TotemRSS.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Totem/Totem.source/Contents/Resources/release_notes-v1.3.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Totem/Totem.source/Contents/TotemRSS.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/CurtainCall/CurtainCall.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/CurtainCall/CurtainCall.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/CurtainCall/CurtainCall.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/CurtainCall/CurtainCall.source/Contents/Resources/release_notes-v2.0.4.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/HTML5Audio/HTML5Audio.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/CurtainCall/CurtainCall.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/release_notes-v1.6.5.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Reblog/Reblog.source/Contents/Resources/release_notes-v2.0.5.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Reblog/Reblog.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/rss-select-themes/theme1/styles.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/rss-select-themes/theme2/styles.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/rss-select-themes/theme3/styles.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/rss-select-themes/theme4/styles.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/RSS-Select/RSS-Select.source/Contents/Resources/rss-select-themes/theme5/styles.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/gyro-images/ribbon3/gyro_ribbon_left_start_3.png",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/release_notes-v1.2.7.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Resources/Gyro.icns",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Gyro/Gyro.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/GoogleMaps/GoogleMaps.source/Contents/Resources/release_notes-v2.2.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/GoogleMaps/GoogleMaps.source/Contents/Resources/template.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/GoogleMaps/GoogleMaps.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/GoogleMaps/GoogleMaps.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/_JWProduct/JWProduct.stack/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Resources/release_notes-v2.5.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/Resources/release_notes-v2.3.6.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Fancy-Image-Reflection/Fancy-Image-Reflection.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Dropbox/Dispatch2Dropbox.source/Contents/Resources/release_notes-v2.2.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2AmazonS3/Dispatch2AmazonS3.source/Contents/Resources/release_notes-v2.2.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Server/Dispatch2Server.source/Contents/Resources/release_notes-v2.2.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Dropbox/Dispatch2Dropbox.source/Contents/Resources/template.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Server/Dispatch2Server.source/Contents/Resources/template.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2AmazonS3/Dispatch2AmazonS3.source/Contents/Resources/template.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Dropbox/Dispatch2Dropbox.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2AmazonS3/Dispatch2AmazonS3.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Server/Dispatch2Server.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Dropbox/Dispatch2Dropbox.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2AmazonS3/Dispatch2AmazonS3.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Dispatch2Server/Dispatch2Server.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Downloads/uploadifive-v/uploadifive-change-log.txt",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/Resources/release_notes-v2.3.5.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Expose/Expose.source/Contents/ExposeImagePro.source/Contents/Resources/Exif.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/SqueezeBox2/SqueezeBox2.source/Contents/Resources/release_notes-v2.1.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/SqueezeBox2/SqueezeBox2.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/SqueezeBox2/SqueezeBox2.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/SqueezeBox2/SqueezeBox2.source/Contents/Resources/release_notes-v2.0.1.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Browser-Reject/Browser-Reject.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Browser-Reject/Browser-Reject.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Browser-Reject/Browser-Reject.source/Contents/Resources/release_notes-v1.5.7.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Browser-Reject/Browser-Reject.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/QuickPics-Instagram/QuickPics-Instagram.stack/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Desktop/Copy Meta Attributes To Current Page.jstalk",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Resources/script.js",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Resources/release_notes-v1.0.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Resources/style.scss",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/DuckDuckSearch/DuckDuckSearch.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Lynx/Lynx.source/Contents/Resources/style.scss",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Letterpress/Letterpress.source/Contents/LetterpressBox.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Letterpress/Letterpress.source/Contents/LetterpressBox.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/Letterpress/Letterpress.source/Contents/Resources/release_notes-v1.3.3.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/_JWProduct/JWProduct.stack/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/PostOffice/PostOffice.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/release_notes-v3.4.6.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/template.html",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/tumblr-lib/helper.tumblr.php",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Web-Projects/Websites/joeworkman.net/.htaccess",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Resources/release_notes-v1.2.0.md",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/ResponsiveHide.source/Contents/Info.plist",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Responsive3.source/Contents/Resources/style.css",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Responsive4.source/Contents/Resources/style.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"ocr_engine.ocr ",
+			"case",
+			"note",
+			"ocr",
+			"file",
+			"process_pdf",
+			"puts",
+			"month_word",
+			"			\n",
+			"match",
+			"%[if %(%id=date_format% == ",
+			"%[if %(%id=date_format% == \\d+)%]%",
+			"%[endif]%",
+			"value",
+			"type",
+			":type",
+			"type",
+			"stage",
+			"use plugin",
+			"git.commit",
+			"sleep",
+			"url(",
+			"background-image:url(",
+			"doc.remove",
+			"document_stack",
+			"nav",
+			"mav",
+			"swipe",
+			"=swipe",
+			"});",
+			"swipe",
+			"text-decoration",
+			"CurlHttpClient",
+			"method",
+			"curl_close",
+			"extractHeaders",
+			"setHeaders",
+			"curl",
+			"<img",
+			"text-align",
+			"font_size",
+			"_size",
+			"centered",
+			"center",
+			"easeOutBounce",
+			"expose_%id=id%",
+			"date",
+			"date%",
+			"show_date",
+			"show_data",
+			"date",
+			"show_date",
+			"show_data",
+			"hide",
+			"hide_ribbon",
+			"hide",
+			"siteAsset",
+			"ribbon_align",
+			"wrapper",
+			"100?99",
+			"*100",
+			"password_field",
+			"php",
+			"template",
+			"progressData",
+			"progress",
+			"+1",
+			"100",
+			"button_wrapper",
+			"iPhone",
+			"easeOutQuad",
+			"duration",
+			"easing",
+			"v.easing[this.easing](e,this.options.duration*e,0,1,this.options.duration)",
+			"v.easing",
+			"easing",
+			"fluid-width-video-wrapper",
+			"mask",
+			"opacity",
+			"load()",
+			"overlay",
+			"get(",
+			"get",
+			"get(0)",
+			"get",
+			"pagination",
+			"next_url",
+			"limit",
+			"tag%",
+			"tag",
+			"advertisements",
+			"kw",
+			"form",
+			"refresh",
+			"clear_all_cache",
+			"clear_cache",
+			"refresh",
+			"1.5",
+			"</span>",
+			"\"></span> ",
+			"      <span><span class=\"fontawesome ",
+			"jquery",
+			"toggleAwayMode",
+			"toggle",
+			"mode-toggle",
+			"toggle-",
+			"toggle-away",
+			"toggle",
+			"redirect",
+			"passphrase",
+			"svg",
+			"controls",
+			"gif",
+			"loading.gif",
+			"%assetPath%/",
+			"png",
+			"powergrid@50",
+			"asci",
+			"colgroup",
+			"col_group",
+			"group",
+			"		\n",
+			"raw",
+			"show_footer",
+			"show_header",
+			"preview_markdown",
+			"%",
+			"'%id=sep%'"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"month",
+			"",
+			"simulate",
+			"url(%assetPath%/html5media/",
+			"background-image:url(%assetPath%/html5media/",
+			"JsonQueryManager",
+			"%id%",
+			"</string></dict>",
+			"</string><key>title</key><string>",
+			"<dict><key>value</key><string>",
+			"%assetPath%/html5media/",
+			"powergrid-50",
+			"display_footer",
+			"display_header",
+			"$geotarget_settings",
+			"@gconn",
+			"%assetPath%/lynx-images",
+			"and",
+			"@compiled_stack"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "bin/paperless",
+					"settings":
+					{
+						"buffer_size": 5440,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4502,
+								4502
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1254.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/paperless/engine.rb",
+					"settings":
+					{
+						"buffer_size": 6395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2571.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/paperless/services/evernote.rb",
+					"settings":
+					{
+						"buffer_size": 502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								493,
+								493
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true
+}
