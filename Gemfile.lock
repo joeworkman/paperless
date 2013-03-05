@@ -1,0 +1,55 @@
+PATH
+  remote: .
+  specs:
+    paperless (0.0.1)
+      gli (= 2.5.4)
+      pdf-reader
+      rb-appscript
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    Ascii85 (1.0.2)
+    afm (0.2.0)
+    aruba (0.5.1)
+      childprocess (~> 0.3.6)
+      cucumber (>= 1.1.1)
+      rspec-expectations (>= 2.7.0)
+    builder (3.1.4)
+    childprocess (0.3.6)
+      ffi (~> 1.0, >= 1.0.6)
+    cucumber (1.2.1)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.11.0)
+      json (>= 1.4.6)
+    diff-lcs (1.1.3)
+    ffi (1.2.0)
+    gherkin (2.11.5)
+      json (>= 1.4.6)
+    gli (2.5.4)
+    hashery (2.1.0)
+    json (1.7.5)
+    pdf-reader (1.3.2)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.0)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
+    rake (10.0.3)
+    rb-appscript (0.6.1)
+    rdoc (3.12)
+      json (~> 1.4)
+    rspec-expectations (2.12.1)
+      diff-lcs (~> 1.1.3)
+    ruby-rc4 (0.1.5)
+    ttfunk (1.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aruba
+  paperless!
+  rake
+  rdoc

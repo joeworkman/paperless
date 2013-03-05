@@ -10,18 +10,21 @@
 :service: evernote
 :rules:
  - 
+   description: Date Rule
    scope: content
    condition: <date>
  - 
+   description: Find Francisca anywhere and tag her
    scope: content filename
-   condition: Fran\w+
+   condition: Francisc\w+
    tags: <match>
  - 
+   description: Find American Funds and do things to it
    scope: content 
    condition: American Funds
    tags: retirement
-   notebook: '@Inbox'
-   title: '<match> Statement'
+   destination: 'Medical'
+   title: '<match> Statement <date=%Y-%m>'
 ...
 
 # Sample config with explanation 

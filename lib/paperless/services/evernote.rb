@@ -8,17 +8,12 @@ module PaperlessService
 	class Evernote
 
 		def initialize(options)
-      @file     = options[:file]
-      @notebook = options[:notebook]
-      @title    = options[:title]
-      @file     = options[:tags]
-
       @app = app(PaperlessService::EVERNOTE)
       @app.activate
 		end
 
-    def create
-      @app.create_note(:notebook => @notebook, :from_file => MacTypes::FileURL.path(@file), :title => @title, :tags => @tags)
+    def create(options)
+      @app.create_note(:notebook => options[:notebook], :from_file => MacTypes::FileURL.path(options[:file]), :title => options[:title], :tags => options[:tags])
     end
 
 	end

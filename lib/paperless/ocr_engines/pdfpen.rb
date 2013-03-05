@@ -6,19 +6,18 @@ module PaperlessOCR
   PDFPEN = 'PDFpen'
 
 	class PDFpen
-		def initialize(options)
-			@file = options[:file]
-      @minimize = options[:minimize]||false
+		def initialize
       @engine = PaperlessOCR::PDFPEN
       @app = app(@engine)
 		end
 
-    def ocr
+    def ocr(options)
+      minimize = options[:minimize]||false
       begin
-        doc = @app.open MacTypes::Alias.path(@file)
+        doc = @app.open MacTypes::Alias.path(options[:file])
         doc.ocr
 
-        if @minimize
+        if minimize
           sys = app("System Events")
           sys.application_processes[@engine].windows[1].buttons[its.role_description.eq("minimize button")].buttons[1].click
         end
@@ -32,5 +31,5 @@ module PaperlessOCR
       end
     end
 
-	end
+  end
 end

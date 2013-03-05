@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
 require 'gli'
 require 'yaml'
+require 'cocoa_dialog'
+include CocoaDialog
+
+# Set the path to the CocoaDialog app
+COCOADIALOG = File.dirname(__FILE__) +'/CocoaDialog.app/Contents/MacOS/CocoaDialog'
 
 # begin # XXX: Remove this begin/rescue before distributing your app
 require 'paperless'
@@ -19,11 +24,11 @@ version Paperless::VERSION
 
 config_file '.paperless.rc.yaml'
 
-desc 'Tell the configured service to sync after the command completes'
-switch :sync
+desc 'Tell the configured service to sync after the command completes.'
+switch :sync, :default_value => true
 
 desc 'Only print what would be done. Nothing actually gets modified.'
-switch :simulate
+switch :simulate, :negatable => false, :default_value => false
 
 desc 'The name of the app to OCR pdf documents (pdfpen|pdfpenpro|none)'
 default_value 'none'
@@ -65,12 +70,12 @@ default_value 'filedate'
 arg_name 'Date Default'
 flag :date_default
 
-desc 'Default notebook to add notes into'
+desc 'Default destination to add notes into'
 default_value 'Inbox'
 arg_name 'Notebook'
-flag :notebook
+flag :destination
 
-pre do |global,command,options,args|
+pre do |global_options,command,options,args|
   # Pre logic here
   # Return true to proceed; false to abort and not call the
   # chosen command
@@ -94,7 +99,7 @@ pre do |global,command,options,args|
   true
 end
 
-post do |global,command,options,args|
+post do |global_options,command,options,args|
   # Post logic here
   # Use skips_post before a command to skip this
   # block on that command only
@@ -138,10 +143,10 @@ arg_name 'file_name'
 command :create do |c|
 
   c.desc 'Process the file through the rules.'
-  c.switch :rules, :default_value => true
+  c.switch :proc_rules, :default_value => true
 
-  c.desc 'OCR the document if its a PDF'
-  c.switch :ocr, :default_value => false
+  c.desc 'OCR the document if it is a PDF'
+  c.switch :ocr, :negatable => false, :default_value => false
 
   c.action do |global_options,options,args|
 
@@ -153,16 +158,18 @@ command :create do |c|
         raise "File does not exist (#{file})"
       end
 
+      puts `#{COCOADIALOG} standard-inputbox --title "test" --informative-text "text" --text "text" --no-newline --string-output`
+
       engine = Paperless::Engine.new({
         :file         => file,
         :ocr_engine   => global_options[:ocr_engine],
         :text_ext     => global_options[:text_ext],
         :html_ext     => global_options[:html_ext],
-        :destination  => global_options[:destination],
+        :default_destination => global_options[:destination],
         :date_format  => global_options[:date_format],
         :date_locale  => global_options[:date_locale],
         :date_default => global_options[:date_default],
-        :default_notebook => global_options[:notebook],
+        :service      => global_options[:service],
         :rules        => global_options[:rules]
       })
 
@@ -172,7 +179,7 @@ command :create do |c|
         engine.ocr
       end
 
-      if options[:rules]
+      if options[:proc_rules]
         puts "Processing rules..."
         engine.process_rules 
       end
@@ -181,7 +188,7 @@ command :create do |c|
         puts "Simulating changes..."
         engine.print
       else
-        puts "Create note for file: #{file}"
+        puts "Saving to #{} #{file}"
         engine.create
       end
     end
