@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"extensions"
+			],
+			[
+				"Co",
+				"CocoaDialog"
+			],
+			[
+				"ta",
+				"tags"
+			],
+			[
+				"des",
+				"description"
+			],
+			[
+				"custom",
+				"custom_date_var"
+			],
+			[
+				"set_da",
+				"set_date_default"
+			],
+			[
+				"Ever",
+				"EVERNOTE"
+			],
+			[
 				"ocr",
 				"ocr_engine"
 			],
@@ -70,10 +98,6 @@
 			[
 				"mon",
 				"month_word"
-			],
-			[
-				"Ever",
-				"EvernoteMac"
 			],
 			[
 				"each",
@@ -404,10 +428,6 @@
 				"secret_key"
 			],
 			[
-				"ex",
-				"exists"
-			],
-			[
 				"res",
 				"resources_dir"
 			],
@@ -467,7 +487,7 @@
 			"file": "bin/paperless",
 			"settings":
 			{
-				"buffer_size": 5440,
+				"buffer_size": 6015,
 				"line_ending": "Unix"
 			}
 		},
@@ -475,18 +495,31 @@
 			"file": "lib/paperless/engine.rb",
 			"settings":
 			{
-				"buffer_size": 6395,
+				"buffer_size": 4331,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "module PaperlessService\n	class Evernote\n\n		def initialize(options)\n			# @todo: Add logic to validate rule has proper settings\n\n			@scope 		 = options['scope'].split\n			@condition = options['condition']\n			@notebook  = options['notebook']\n			@service  = options['service']\n			@title 		 = options['title']\n			@date 		 = options['date']\n			@tags			 = options['tags'].nil? ? Array.new : options['tags'].split\n			@date_stamp = DateTime.now\n			@date_default = '%Y-%m-%d'\n			@matched   = false\n		end\n\n	end\nend",
-			"file": "lib/paperless/services/evernote.rb",
-			"file_size": 48,
-			"file_write_time": 1362283984000000,
+			"file": "lib/paperless/rule.rb",
 			"settings":
 			{
-				"buffer_size": 502,
+				"buffer_size": 2147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "paperless.rc.yaml",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/MacRAID/joeworkman/.paperless.rc.yaml",
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -494,7 +527,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 189.0,
+		"height": 109.0,
 		"selected_items":
 		[
 			[
@@ -547,13 +580,18 @@
 	},
 	"file_history":
 	[
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpenpro.rb",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/constants.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/cocoa_dialog.rb",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/paperless.gemspec",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/date_search.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/paperless.sublime-workspace",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless.rb",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpen.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpenpro.rb",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/acrobat.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/ocr_engines/pdfpen.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/rule.rb",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/services/evernote.rb",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/paperless.sublime-project",
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/constants.rb",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless/lib/paperless/services/devonthink.rb",
 		"/Volumes/MacRAID/joeworkman/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/release_notes-v3.4.9.md",
@@ -669,12 +707,7 @@
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/PostOffice/PostOffice.source/Contents/Resources/template.html",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/release_notes-v3.4.6.md",
 		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/template.html",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/tumblr-lib/helper.tumblr.php",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Web-Projects/Websites/joeworkman.net/.htaccess",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Resources/release_notes-v1.2.0.md",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/ResponsiveHide.source/Contents/Info.plist",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Responsive3.source/Contents/Resources/style.css",
-		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/ResponsiveLayout/ResponsiveLayout.source/Contents/Responsive4.source/Contents/Resources/style.css"
+		"/Volumes/MacRAID/joeworkman/Dropbox/Development/Rapidweaver/Stacks-Development/TumblrPro/TumblrPro.source/Contents/Resources/tumblr-lib/helper.tumblr.php"
 	],
 	"find":
 	{
@@ -693,6 +726,28 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".app",
+			"./bin",
+			"./bin/CocoaDialog.app\n./bin/CocoaDialog.app/Contents\n./bin/CocoaDialog.app/Contents/Info.plist\n./bin/CocoaDialog.app/Contents/MacOS\n./bin/CocoaDialog.app/Contents/MacOS/CocoaDialog\n./bin/CocoaDialog.app/Contents/PkgInfo\n./bin/CocoaDialog.app/Contents/Resources\n./bin/CocoaDialog.app/Contents/Resources/atom.icns\n./bin/CocoaDialog.app/Contents/Resources/Changelog\n./bin/CocoaDialog.app/Contents/Resources/cocoadialog.icns\n./bin/CocoaDialog.app/Contents/Resources/computer.icns\n./bin/CocoaDialog.app/Contents/Resources/COPYING\n./bin/CocoaDialog.app/Contents/Resources/document.icns\n./bin/CocoaDialog.app/Contents/Resources/find.icns\n./bin/CocoaDialog.app/Contents/Resources/finder.icns\n./bin/CocoaDialog.app/Contents/Resources/firewire.icns\n./bin/CocoaDialog.app/Contents/Resources/folder.icns\n./bin/CocoaDialog.app/Contents/Resources/gear.icns\n./bin/CocoaDialog.app/Contents/Resources/globe.icns\n./bin/CocoaDialog.app/Contents/Resources/hazard.icns\n./bin/CocoaDialog.app/Contents/Resources/heart.icns\n./bin/CocoaDialog.app/Contents/Resources/hourglass.icns\n./bin/CocoaDialog.app/Contents/Resources/info.icns\n./bin/CocoaDialog.app/Contents/Resources/Info.plist\n./bin/CocoaDialog.app/Contents/Resources/InfoPlist.strings\n./bin/CocoaDialog.app/Contents/Resources/Inputbox.nib\n./bin/CocoaDialog.app/Contents/Resources/Inputbox.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/Inputbox.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/Inputbox.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/ipod.icns\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib/info.nib.orig\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib/objects.nib\n./bin/CocoaDialog.app/Contents/Resources/MainMenu.nib/objects.nib.orig\n./bin/CocoaDialog.app/Contents/Resources/Msgbox.nib\n./bin/CocoaDialog.app/Contents/Resources/Msgbox.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/Msgbox.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/Msgbox.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/person.icns\n./bin/CocoaDialog.app/Contents/Resources/PopUpButton.nib\n./bin/CocoaDialog.app/Contents/Resources/PopUpButton.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/PopUpButton.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/PopUpButton.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/Progressbar.nib\n./bin/CocoaDialog.app/Contents/Resources/Progressbar.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/Progressbar.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/Progressbar.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/SecureInputbox.nib\n./bin/CocoaDialog.app/Contents/Resources/SecureInputbox.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/SecureInputbox.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/SecureInputbox.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/sound.icns\n./bin/CocoaDialog.app/Contents/Resources/Textbox.nib\n./bin/CocoaDialog.app/Contents/Resources/Textbox.nib/classes.nib\n./bin/CocoaDialog.app/Contents/Resources/Textbox.nib/info.nib\n./bin/CocoaDialog.app/Contents/Resources/Textbox.nib/keyedobjects.nib\n./bin/CocoaDialog.app/Contents/Resources/x.icn",
+			"date_default",
+			"puts",
+			"<date",
+			"<match",
+			"MATCH_VAR",
+			"::",
+			"FILEDATE",
+			"DATE_VAR",
+			"app(",
+			":negatable => false, :default_value => false",
+			"US",
+			"euro",
+			"locale",
+			"FILEDATE",
+			"notebook",
+			"set_notebook",
+			"notebook",
+			":notebook",
+			"set_service",
 			"ocr_engine.ocr ",
 			"case",
 			"note",
@@ -798,29 +853,7 @@
 			"toggleAwayMode",
 			"toggle",
 			"mode-toggle",
-			"toggle-",
-			"toggle-away",
-			"toggle",
-			"redirect",
-			"passphrase",
-			"svg",
-			"controls",
-			"gif",
-			"loading.gif",
-			"%assetPath%/",
-			"png",
-			"powergrid@50",
-			"asci",
-			"colgroup",
-			"col_group",
-			"group",
-			"		\n",
-			"raw",
-			"show_footer",
-			"show_header",
-			"preview_markdown",
-			"%",
-			"'%id=sep%'"
+			"toggle-"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -828,6 +861,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"bin",
+			"date_default_format",
+			"set_destination",
 			"month",
 			"",
 			"simulate",
@@ -857,7 +893,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -865,15 +901,15 @@
 					"file": "bin/paperless",
 					"settings":
 					{
-						"buffer_size": 5440,
+						"buffer_size": 6015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4502,
-								4502
+								4325,
+								4325
 							]
 						],
 						"settings":
@@ -883,7 +919,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1254.0,
+						"translation.y": 2247.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -893,15 +929,15 @@
 					"file": "lib/paperless/engine.rb",
 					"settings":
 					{
-						"buffer_size": 6395,
+						"buffer_size": 4331,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								146,
-								146
+								160,
+								160
 							]
 						],
 						"settings":
@@ -911,31 +947,86 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2571.0,
+						"translation.y": 23.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "lib/paperless/services/evernote.rb",
+					"file": "lib/paperless/rule.rb",
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 2147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								493,
-								493
+								622,
+								622
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "paperless.rc.yaml",
+					"settings":
+					{
+						"buffer_size": 1425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								201,
+								201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Volumes/MacRAID/joeworkman/.paperless.rc.yaml",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 3,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1015,6 +1106,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 195.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true
 }

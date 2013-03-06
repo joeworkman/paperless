@@ -12,15 +12,11 @@ module PaperlessOCR
 		end
 
     def ocr(options)
-      minimize = options[:minimize]||false
       begin
         doc = @app.open MacTypes::Alias.path(options[:file])
         doc.ocr
 
-        if minimize
-          sys = app("System Events")
-          sys.application_processes[@engine].windows[1].buttons[its.role_description.eq("minimize button")].buttons[1].click
-        end
+        app("System Events").processes[@engine].visible.set(false)
 
         while doc.performing_ocr.get
           sleep 1

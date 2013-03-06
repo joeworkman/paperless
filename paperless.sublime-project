@@ -4,5 +4,7 @@
 		{
 			"path": "/Volumes/MacRAID/joeworkman/Dropbox/Development/Open-Source/paperless"
 		}
-	]
+	],
+	"tab_size": 4,
+  "translate_tabs_to_spaces": false
 }

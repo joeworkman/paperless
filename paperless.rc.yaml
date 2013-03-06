@@ -5,7 +5,6 @@
 :date_default: filedate
 :destination: '@Inbox'
 :text_ext: txt md mmd
-:html_ext: html htm
 :simulate: false
 :service: evernote
 :rules:
@@ -23,7 +22,8 @@
    scope: content 
    condition: American Funds
    tags: retirement
-   destination: 'Medical'
+   destination:
+   service: evernote
    title: '<match> Statement <date=%Y-%m>'
 ...
 
@@ -35,7 +35,7 @@
 :text_ext: txt md mmd
 :html_ext: html htm
 :simulate: false
-:destination: '@Inbox' (Evernote = notebook, Finder = Folder path)
+:destination: '@Inbox' (Evernote = notebook, Finder = Folder path or <nomove>)
 :service: evernote (no others supported for now)
  - 
    scope: content || filename

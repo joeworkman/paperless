@@ -3,6 +3,7 @@ PATH
   specs:
     paperless (0.0.1)
       gli (= 2.5.4)
+      markdown
       pdf-reader
       rb-appscript
 
@@ -30,12 +31,18 @@ GEM
     gli (2.5.4)
     hashery (2.1.0)
     json (1.7.5)
+    kramdown (0.14.1)
+    markdown (1.0.0)
+      kramdown (>= 0.13.7)
+      props (>= 1.0.0)
+      textutils (>= 0.2.0)
     pdf-reader (1.3.2)
       Ascii85 (~> 1.0.0)
       afm (~> 0.2.0)
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
+    props (1.0.0)
     rake (10.0.3)
     rb-appscript (0.6.1)
     rdoc (3.12)
@@ -43,6 +50,7 @@ GEM
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
     ruby-rc4 (0.1.5)
+    textutils (0.2.0)
     ttfunk (1.0.3)
 
 PLATFORMS

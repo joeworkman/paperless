@@ -5,17 +5,17 @@ module Paperless
 		def initialize(options)
 			# @todo: Add logic to validate rule has proper settings
 
-			@scope 		 = options['scope'].split
-			@condition = options['condition']
-			@destination  = options['destination']
-			@service  = options['service']
-			@title 		 = options['title']
-			@date 		 = options['date']
-			@description 		 = options['description']
-			@tags			 = options['tags'].nil? ? Array.new : options['tags'].split
-			@date_stamp = DateTime.now
+			@scope               = options['scope'].split
+			@condition           = options['condition']
+			@destination         = options['destination']
+			@service             = options['service']
+			@title               = options['title']
+			@date                = options['date']
+			@description         = options['description']
+			@tags                = options['tags'].nil? ? Array.new : options['tags'].split
+			@date_stamp          = DateTime.now
 			@date_default_format = '%Y-%m-%d'
-			@matched   = false
+			@matched             = false
 		end
 
 		attr_reader :matched, :tags, :destination, :condition, :title, :date, :service
@@ -29,7 +29,7 @@ module Paperless
 			return @matched if @matched
 
 			if @condition == Paperless::DATE_VAR
-				@date = date
+				@date    = date
 				@matched = true
 			else
 				@scope.each do |type|

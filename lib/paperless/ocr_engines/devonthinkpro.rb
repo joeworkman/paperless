@@ -3,11 +3,12 @@ include Appscript
 
 module PaperlessOCR
 
-  PDFPENPRO = 'PDFpenPro'
+  DEVONTHINKPRO = 'DEVONthink Pro'
 
-	class PDFpenPro
+	class DevonThinkPro
+    
 		def initialize
-      @engine = PaperlessOCR::PDFPENPRO
+      @engine = PaperlessOCR::DEVONTHINKPRO
       @app = app(@engine)
 		end
 

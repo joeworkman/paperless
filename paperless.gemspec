@@ -76,12 +76,12 @@ lib/paperless/rule.rb
 lib/paperless/date_search.rb
 lib/paperless/service/evernote.rb
 lib/paperless/service/finder.rb
-lib/paperless/service/devonthink.rb
+lib/paperless/service/devonthinkpro.rb
 lib/paperless/ocr_engines/acrobat.rb
 lib/paperless/ocr_engines/pdfpen.rb
 lib/paperless/ocr_engines/pdfpenpro.rb
+lib/paperless/ocr_engines/devonthinkpro.rb
 lib/paperless.rb
-lib/cocoa_dialog.rb
   )
   s.require_paths << 'lib'
   s.has_rdoc = true
@@ -95,4 +95,5 @@ lib/cocoa_dialog.rb
   s.add_runtime_dependency('gli','2.5.4')
   s.add_runtime_dependency('rb-appscript')
   s.add_runtime_dependency('pdf-reader')
+  s.add_runtime_dependency('markdown')
 end

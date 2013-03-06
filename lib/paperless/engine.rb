@@ -1,31 +1,42 @@
+require 'date'
 require 'pdf/reader'
+require 'paperless/date_search'
+include DateSearch
 
 module Paperless
 
-  PDF_EXT = 'pdf'
-  DATE_VAR = '<date>'
+  PDF_EXT   = 'pdf'
+  DATE_VAR  = '<date>'
   MATCH_VAR = '<match>'
-  FILEDATE = 'filedate'
-  TODAY = 'today'
+  FILEDATE  = 'filedate'
+  TODAY     = 'today'
 
 	class Engine
 
-		def initialize(options)
-      @destination = nil
-			@title 		= nil
-			@date 		= nil
-			@tags			= Array.new()
+    PDFPEN_ENGINE         = 'pdfpen'
+    PDFPENPRO_ENGINE      = 'pdfpenpro'
+    ACROBAT_ENGINE        = 'acrobat'
+    DEVONTHINKPRO_ENGINE  = 'devonthinkpro'
+    DEVONTHINKPRO_SERVICE = 'devonthinkpro'
+    FINDER_SERVICE        = 'finder'
+    EVERNOTE_SERVICE      = 'evernote'
 
-	    @file     = options[:file]
-      @text_ext = options[:text_ext]
-      @html_ext = options[:html_ext]
-      @pdf_ext  = [Paperless::PDF_EXT]
-      @service = options[:service]
-      @date_format = options[:date_format]
-      @date_locale = options[:date_locale]
-      @date_default = options[:date_default]
+		def initialize(options)
+      @destination         = nil
+      @service             = nil
+      @title               = nil
+      @date                = DateTime.now
+      @tags                = Array.new()
+      
+      @file                = options[:file]
+      @text_ext            = options[:text_ext]
+      @pdf_ext             = [Paperless::PDF_EXT]
+      @default_service     = options[:default_service]
+      @date_format         = options[:date_format]
+      @date_locale         = options[:date_locale]
+      @date_default        = options[:date_default]
       @default_destination = options[:default_destination]
-      @rules 		= Array.new()
+      @rules               = Array.new()
 
 			options[:rules].each do |rule|
 				@rules.push Paperless::Rule.new(rule)
@@ -35,7 +46,8 @@ module Paperless
 		end
 
 		def process_rules
-			text_ext = @text_ext + @html_ext
+      markdown_ext = ['md','mmd']
+			text_ext = @text_ext + markdown_ext
 			file_ext = File.extname(@file).gsub(/\./,'')
 
 			if file_ext == Paperless::PDF_EXT
@@ -59,7 +71,6 @@ module Paperless
 		end
 
 		def set_destination(destination)
-      # TODO: check it destination exists
 			@destination = destination if destination && @destination.nil?
 		end
 
@@ -75,18 +86,50 @@ module Paperless
       puts "Using default date..."
       # Set the default date to the date of the file or else to now
       if @date_default == Paperless::FILEDATE
-        t = File.stat(@file).ctime
+        t = File.stat(@file).mtime
         @date = Date.new(t.year,t.month,t.day) 
       else
         @date = DateTime.now
       end
     end
 
+    def process_rules_engine(text)
+      self.set_date_default if @date.nil?
+      # Process each page and pass it through the rules engine
+      @rules.each do |rule|
+        rule.set_date(@date,@date_format)
+        if !rule.matched && rule.match(@file, text)
+          self.add_tags(rule.tags)
+          self.set_destination(rule.destination)
+          self.set_title(rule.title)
+          self.set_service(rule.service)
+        end
+      end
+    end
+
+    def process_text
+      puts "Processing Text file..."
+
+      text = File.open(@file, "rb") {|io| io.read}
+
+      # Verify that we need to search for date or just set to today
+      # Need to prcess file for date in case the rules need to use it.
+      # First check if there are actually any date rules
+      @rules.each do |rule|
+        if rule.condition == Paperless::DATE_VAR
+          @date = date_search(text,@date_locale)
+        end
+      end
+
+      # Process each page and pass it through the rules engine
+      process_rules_engine(text)
+    end
+
+
 		def process_pdf
 			puts "Processing PDF pages..."
 
 		  reader = PDF::Reader.new(@file)
-      ds = Paperless::DateSearch.new
 
 		  # Verify that we need to search for date or just set to today
 		  # Need to prcess file for date in case the rules need to use it.
@@ -94,33 +137,25 @@ module Paperless
       @rules.each do |rule|
 			  if rule.condition == Paperless::DATE_VAR
 			    reader.pages.each do |page|
-			    	break if @date = ds.date_search(page.text)
+			    	break if @date = date_search(page.text,@date_locale)
 			    end
 			    break
 	    	end
 			end
-	    self.set_date_default if @date.nil?
 
 			# Process each page and pass it through the rules engine
 	    reader.pages.each do |page|
-	      @rules.each do |rule|
-	      	rule.set_date(@date,@date_format)
-	      	if !rule.matched && rule.match(@file, page.text)
-	      		self.add_tags(rule.tags)
-	      		self.set_destination(rule.destination)
-	      		self.set_title(rule.title)
-	      		self.set_service(rule.service)
-	      	end
-	      end
+        process_rules_engine(page.text)
 	    end
 		end
 
 		def ocr
 			puts "Running OCR on file with #{@ocr_engine}"
       ocr_engine = case @ocr_engine
-        when /^pdfpenpro$/i then PaperlessOCR::PDFpenPro.new
-        when /^pdfpen$/i then PaperlessOCR::PDFpen.new
-        when /^acrobat$/i then PaperlessOCR::Acrobat.new
+        when /^#{PDFPENPRO_ENGINE}$/i     then PaperlessOCR::PDFpenPro.new
+        when /^#{PDFPEN_ENGINE}$/i        then PaperlessOCR::PDFpen.new
+        when /^#{ACROBAT_ENGINE}$/i       then PaperlessOCR::Acrobat.new
+        when /^#{DEVONTHINKPRO_ENGINE}$/i then PaperlessOCR::DevonThinkPro.new
         else false
       end
       
@@ -132,34 +167,49 @@ module Paperless
 		end
 
 		def create
-			self.print
-
       # May need to externalize this so other methods can access it.
-      service = case @service
-        when /^evernote$/i then PaperlessService::Evernote.new
-        when /^finder$/i then PaperlessService::Finder.new
-        when /^devonthink$/i then PaperlessService::DevonThink.new
+      service = case @service.nil? ? @default_service : @service
+        when /^#{EVERNOTE_SERVICE}$/i then PaperlessService::Evernote.new
+        when /^#{FINDER_SERVICE}$/i then PaperlessService::Finder.new
+        when /^#{DEVONTHINKPRO_SERVICE}$/i then PaperlessService::DevonThinkPro.new
         else false
       end
 
       if service
+        self.print
+        
         destination = @destination.nil? ? @default_destination : @destination
         # :created => @date
-        service.create({ :destination => destination, :from_file => MacTypes::FileURL.path(@file), :title => @title, :tags => @tags })
+        service.create({ 
+          :destination => destination, 
+          :text_ext => @text_ext, 
+          :file => @file, 
+          :date => @date, 
+          :title => @title, 
+          :tags => @tags 
+        })
       else 
         puts "WARNING: No valid Service was defined."
       end
 		end
 
 		def print
-      destination = @destination.nil? ? @default_destination : @destination
-			title = @title.nil? ? File.basename(@file) : @title
+      service = @service.nil? ? @default_service : @service
+      title = @title.nil? ? File.basename(@file) : @title
 
-			puts "File: #{@file}"
-			puts "Destination: #{destination}"
-			puts "Title: #{title}"
-			puts "Date: #{@date.to_s}"
-			puts "Tags: #{@tags.join(',')}"
+      destination = @destination.nil? ? @default_destination : @destination
+      if destination == PaperlessService::Finder::NO_MOVE && service == PaperlessService::FINDER.downcase
+        destination = File.dirname(@file)
+      end
+
+      puts "* ---------------------------------------------"
+			puts "* File: #{@file}"
+      puts "* Service: #{service}"
+			puts "* Destination: #{destination}"
+			puts "* Title: #{title}"
+			puts "* Date: #{@date.strftime('%Y-%m-%d')}"
+			puts "* Tags: #{@tags.join(', ')}"
+      puts "* ---------------------------------------------"
 		end
 
 	end
