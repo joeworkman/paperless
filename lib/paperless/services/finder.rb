@@ -28,7 +28,7 @@ module PaperlessService
         new_filename = File.join(destination, title + File.extname(from_file))
       end
 
-      FileUtils.mv from_file, new_filename, :force => true
+      FileUtils.cp from_file, new_filename, :force => true
 
       time = Time.new(date.year, date.month, date.day)
       FileUtils.touch new_filename, {:mtime => time}
@@ -36,6 +36,10 @@ module PaperlessService
       if tags.length > 0
         # Add open meta tags to file
         system("#{OPENMETA} -p '#{new_filename}' -a #{tags.join(' ')}")
+      end
+
+      if options[:delete]
+        FileUtils.rm from_file, :force => true
       end
     end
 

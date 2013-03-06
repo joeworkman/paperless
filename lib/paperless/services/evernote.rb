@@ -1,3 +1,5 @@
+require 'fileutils'
+include FileUtils
 require 'markdown'
 require 'appscript'
 include Appscript
@@ -41,6 +43,10 @@ module PaperlessService
       create_options[:notebook] = destination if destination
 
       @app.create_note(create_options)
+
+      if options[:delete]
+        FileUtils.rm from_file, :force => true
+      end
     end
 
 	end

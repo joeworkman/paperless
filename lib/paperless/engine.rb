@@ -21,6 +21,8 @@ module Paperless
     FINDER_SERVICE        = 'finder'
     EVERNOTE_SERVICE      = 'evernote'
 
+    attr_reader :service
+
 		def initialize(options)
       @destination         = nil
       @service             = nil
@@ -166,7 +168,7 @@ module Paperless
       end
 		end
 
-		def create
+		def create(options)
       # May need to externalize this so other methods can access it.
       service = case @service.nil? ? @default_service : @service
         when /^#{EVERNOTE_SERVICE}$/i then PaperlessService::Evernote.new
@@ -181,12 +183,13 @@ module Paperless
         destination = @destination.nil? ? @default_destination : @destination
         # :created => @date
         service.create({ 
+          :delete => options[:delete], 
           :destination => destination, 
           :text_ext => @text_ext, 
           :file => @file, 
           :date => @date, 
           :title => @title, 
-          :tags => @tags 
+          :tags => @tags
         })
       else 
         puts "WARNING: No valid Service was defined."

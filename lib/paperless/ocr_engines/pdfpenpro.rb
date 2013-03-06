@@ -9,6 +9,7 @@ module PaperlessOCR
 		def initialize
       @engine = PaperlessOCR::PDFPENPRO
       @app = app(@engine)
+      @app.activate
 		end
 
     def ocr(options)

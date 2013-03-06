@@ -45,7 +45,9 @@ module PaperlessService
       group = @app.create_location(dt_folder, {:in => db_conn})
       @app.import(from_file, {:to => group, :name => title} )
 
-      FileUtils.rm from_file, :force => true
+      if options[:delete]
+        FileUtils.rm from_file, :force => true
+      end
     end
 
   end

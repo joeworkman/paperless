@@ -3,7 +3,7 @@ require 'gli'
 require 'yaml'
 require 'paperless'
 
-# Set the path to the CocoaDialog app
+# Set the path to the CocoaDialog.app and openmeta
 COCOADIALOG = File.dirname(__FILE__) +'/CocoaDialog.app/Contents/MacOS/CocoaDialog'
 OPENMETA = File.dirname(__FILE__) +'/openmeta'
 
@@ -110,7 +110,7 @@ end
 # end
 
 # Assign Command
-desc 'Assign a tag to an existing note.'
+desc 'Assign a tag to an existing note. (Not yet implemented)'
 arg_name 'tag_name', :multiple
 command :assign do |c|
 
@@ -120,7 +120,7 @@ command :assign do |c|
 end
 
 # Create Command
-desc 'Create a new note'
+desc 'Create a new note from a file'
 arg_name 'file_name'
 command :create do |c|
 
@@ -129,6 +129,9 @@ command :create do |c|
 
   c.desc 'Process the file through the rules.'
   c.switch :proc_rules, :default_value => true
+
+  c.desc 'Delete the original file after its been imported into the target service.'
+  c.switch :delete, :default_value => true
 
   c.desc 'OCR the document if it is a PDF'
   c.switch :ocr, :negatable => false, :default_value => false
@@ -184,8 +187,8 @@ command :create do |c|
         puts "Simulating changes..."
         engine.print
       else
-        puts "Saving to #{} #{file}"
-        engine.create
+        puts "Saving #{file} to #{engine.service}"
+        engine.create({:delete => options[:delete]})
       end
     end
   end
@@ -202,7 +205,7 @@ end
 # end
 
 # Search Command
-desc 'Search for a note in Evernote and perform actions on them.'
+desc 'Search for a note in Evernote and perform actions on them. (Not yet implemented)'
 arg_name 'note_name'
 command :search do |c|
 
@@ -212,7 +215,7 @@ command :search do |c|
 end
 
 # Unassign Command
-desc 'Remove tags from a note.'
+desc 'Remove tags from a note. (Not yet implemented)'
 arg_name 'note_name'
 command :unassign do |c|
 

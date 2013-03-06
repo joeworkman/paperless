@@ -70,6 +70,7 @@ bin/CocoaDialog.app/Contents/Resources/Textbox.nib/info.nib
 bin/CocoaDialog.app/Contents/Resources/Textbox.nib/keyedobjects.nib
 bin/CocoaDialog.app/Contents/Resources/x.icns
 bin/paperless
+bin/openmeta
 lib/paperless/version.rb
 lib/paperless/engine.rb
 lib/paperless/rule.rb
