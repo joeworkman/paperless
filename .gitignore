@@ -16,3 +16,6 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
+
+# rake noise
+pkg/*

@@ -75,9 +75,9 @@ lib/paperless/version.rb
 lib/paperless/engine.rb
 lib/paperless/rule.rb
 lib/paperless/date_search.rb
-lib/paperless/service/evernote.rb
-lib/paperless/service/finder.rb
-lib/paperless/service/devonthinkpro.rb
+lib/paperless/services/evernote.rb
+lib/paperless/services/finder.rb
+lib/paperless/services/devonthinkpro.rb
 lib/paperless/ocr_engines/acrobat.rb
 lib/paperless/ocr_engines/pdfpen.rb
 lib/paperless/ocr_engines/pdfpenpro.rb
