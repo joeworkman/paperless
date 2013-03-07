@@ -7,7 +7,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'joe@workmanmail.com'
   s.homepage = 'http://joeworkman.net/'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'A command-line utility for a Paperless that apply rules in order to auto-sort notes into supported services.'
+  s.summary = 'A command-line utility for a Paperless that apply rules in order to auto-sort notes into supported services such as Finder, Evernote, DevonThink and PDFPen'
 # Add your other files here if you make them
   s.files = %w(
 bin/CocoaDialog.app
@@ -85,6 +85,7 @@ lib/paperless/ocr_engines/devonthinkpro.rb
 lib/paperless.rb
   )
   s.require_paths << 'lib'
+  s.required_ruby_version = '>= 1.9.2'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README.rdoc','paperless.rdoc']
   s.rdoc_options << '--title' << 'paperless' << '--main' << 'README.rdoc' << '-ri'

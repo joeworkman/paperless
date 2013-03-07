@@ -47,6 +47,8 @@ module PaperlessService
       if options[:delete]
         FileUtils.rm from_file, :force => true
       end
+
+      @app.synchronize
     end
 
 	end

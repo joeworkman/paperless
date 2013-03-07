@@ -13,10 +13,7 @@ program_desc 'A command-line interface for Paperless workflows that apply rules 
 
 version Paperless::VERSION
 
-config_file '.paperless.rc.yaml'
-
-desc 'Tell the configured service to sync after the command completes.'
-switch :sync, :default_value => true
+config_file '.paperless.rc'
 
 desc 'Only print what would be done. Nothing actually gets modified.'
 switch :simulate, :negatable => false, :default_value => false
@@ -31,10 +28,12 @@ default_value 'txt md mmd'
 arg_name 'Text extensions'
 flag :text_ext
 
-desc 'The path to a new rules file. If not defined, the global rules from the config file will be used.'
-default_value ''
-arg_name 'Rules file'
+desc 'Do not use.'
 flag :rules
+
+desc 'The path to a new rules file. If not defined, the global rules from the config file will be used.'
+arg_name 'Rules file'
+flag :rules_file
 
 desc 'The application where the document will be added to.'
 default_value 'evernote'
@@ -70,13 +69,11 @@ pre do |global_options,command,options,args|
   global_options[:text_ext] = global_options[:text_ext].split
 
   # Load new rules file is passed
-  if global_options[:rules].class.to_s.match('String')
-      if File.exists?(File.expand_path global_options[:rules]) 
-        yaml = YAML.load File.expand_path global_options[:rules]
-        global_options[:rules] = yaml[:rules]
-      else
-        global_options[:rules] = Array.new
-      end
+  if global_options[:rules_file]
+    if File.exists?(File.expand_path global_options[:rules_file]) 
+      yaml = YAML.load File.expand_path global_options[:rules_file]
+      global_options[:rules] = yaml[:rules]
+    end
   end
 
   # puts global_options.inspect
@@ -98,6 +95,16 @@ on_error do |exception|
   puts "There was an error processing the command."
   true
 end
+
+# Assign Command
+desc 'Edit the configuration file in TextEdit'
+command :editconfig do |c|
+
+  c.action do |global_options,options,args|
+    system("open -a TextEdit ~/.paperless.rc")
+  end
+end
+
 
 # Append Command
 # desc 'Append data to the end of an existing note.'
@@ -125,7 +132,7 @@ arg_name 'file_name'
 command :create do |c|
 
   c.desc 'Open a prompt to rename the file before its processed through the rules.'
-  c.switch :prompt, :default_value => true
+  c.switch :prompt, :negatable => false, :default_value => false
 
   c.desc 'Process the file through the rules.'
   c.switch :proc_rules, :default_value => true

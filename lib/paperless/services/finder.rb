@@ -38,7 +38,7 @@ module PaperlessService
         system("#{OPENMETA} -p '#{new_filename}' -a #{tags.join(' ')}")
       end
 
-      if options[:delete]
+      if options[:delete] && from_file != new_filename
         FileUtils.rm from_file, :force => true
       end
     end

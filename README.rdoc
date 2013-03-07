@@ -1,6 +1,30 @@
-= paperless
+= paperless - A command-line utility for a Paperless that apply rules in order to auto-sort notes into supported services such as Finder, Evernote, DevonThink and PDFPen.
 
-Describe your project here
+Author::  Joe Workman (joe at workmanmail.com)
+Copyright:: Copyright (c) 2013 Joe Workman
 
-:include:paperless.rdoc
 
+A command-line utility for a Paperless that apply rules in order to auto-sort notes into supported services such as Finder, Evernote, DevonThink and PDFPen
+
+== Links
+
+* {Source and Docs on Github}[https://github.com/joeworkman/paperless]
+
+== Install
+
+Install:
+	gem install paperless
+
+== Shell Examples
+
+Simulate the creation of a new note:
+
+	paperless --simulate create document.pdf
+
+OCR and prompt for renaming the file: 
+
+	paperless create --ocr --prompt document.pdf 
+
+Define a separate rules file and OCR:
+
+	paperless --rules_file=/MacHD/rules.txt create --ocr document.pdf
