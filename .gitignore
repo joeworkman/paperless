@@ -19,3 +19,7 @@ CVS
 
 # rake noise
 pkg/*
+
+# sublime text files
+*.sublime-project
+*.sublime-workspace
