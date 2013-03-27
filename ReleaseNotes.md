@@ -5,7 +5,7 @@ Join the Paperless User Group <https://app.glassboard.com/web/invitation/code/ak
 ## v0.2.0 (March 27, 2013)
 ---
 
-1. Added new <filename> varaible. 
+1. Added new `<filename>` varaible. 
 2. The --prompt option can now be used to rename the file name in simulate mode. 
 3. Added PDFPenPro6 and PDFpen6 as an option for an OCR Engine. 
 4. Added new date format into date search... December 2012
