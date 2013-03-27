@@ -8,6 +8,7 @@ module Paperless
   PDF_EXT   = 'pdf'
   DATE_VAR  = '<date>'
   MATCH_VAR = '<match>'
+  FILENAME_VAR = '<filename>'
   FILEDATE  = 'filedate'
   TODAY     = 'today'
 
@@ -15,6 +16,7 @@ module Paperless
 
     PDFPEN_ENGINE         = 'pdfpen'
     PDFPENPRO_ENGINE      = 'pdfpenpro'
+    PDFPENPRO6_ENGINE     = 'pdfpenpro6'
     ACROBAT_ENGINE        = 'acrobat'
     DEVONTHINKPRO_ENGINE  = 'devonthinkpro'
     DEVONTHINKPRO_SERVICE = 'devonthinkpro'
@@ -25,7 +27,7 @@ module Paperless
 
 		def initialize(options)
       @destination         = nil
-      @service             = nil
+      @service             = options[:default_service]
       @title               = nil
       @date                = DateTime.now
       @tags                = Array.new()
@@ -119,7 +121,7 @@ module Paperless
       # First check if there are actually any date rules
       @rules.each do |rule|
         if rule.condition == Paperless::DATE_VAR
-          @date = date_search(text,@date_locale)
+          @date = date_search(text,@date_locale) || date_search(@file,@date_locale)
         end
       end
 
@@ -141,6 +143,8 @@ module Paperless
 			    reader.pages.each do |page|
 			    	break if @date = date_search(page.text,@date_locale)
 			    end
+          # Check for the date in the file name if not found in the content
+          @date = date_search(@file,@date_locale) if @date.nil?
 			    break
 	    	end
 			end
@@ -151,9 +155,21 @@ module Paperless
 	    end
 		end
 
-		def ocr
+		def ocr(dump = false)
+      reader = PDF::Reader.new(@file)
+      if reader.pages.length > 0
+        text = reader.pages[0].text
+        if !text.nil? && text != ''
+          puts text if dump
+          puts "This doc already seems to be OCR'd. Not processing through #{@ocr_engine}"
+          return
+        end
+      end
+
 			puts "Running OCR on file with #{@ocr_engine}"
       ocr_engine = case @ocr_engine
+        when /^#{PDFPENPRO6_ENGINE}$/i    then PaperlessOCR::PDFpenPro6.new
+        when /^#{PDFPEN6_ENGINE}$/i       then PaperlessOCR::PDFpen6.new
         when /^#{PDFPENPRO_ENGINE}$/i     then PaperlessOCR::PDFpenPro.new
         when /^#{PDFPEN_ENGINE}$/i        then PaperlessOCR::PDFpen.new
         when /^#{ACROBAT_ENGINE}$/i       then PaperlessOCR::Acrobat.new
@@ -163,6 +179,16 @@ module Paperless
       
       if ocr_engine
         ocr_engine.ocr({:file => @file})
+
+        if dump
+          puts "Dumping Page Content..."
+          # Print the contents of the doc
+          reader = PDF::Reader.new(@file)
+          reader.pages.each do |page|
+            puts page.text
+          end
+        end
+
       else
         puts "WARNING: No valid OCR engine was defined."
       end
@@ -180,15 +206,16 @@ module Paperless
       if service
         self.print
         
-        destination = @destination.nil? ? @default_destination : @destination
-        # :created => @date
+        destination = @destination.nil? ? @default_destination                      : @destination
+        title       = @title.nil?       ? File.basename(@file, File.extname(@file)) : @title
+
         service.create({ 
           :delete => options[:delete], 
           :destination => destination, 
           :text_ext => @text_ext, 
           :file => @file, 
           :date => @date, 
-          :title => @title, 
+          :title => title, 
           :tags => @tags
         })
       else 
@@ -198,7 +225,7 @@ module Paperless
 
 		def print
       service = @service.nil? ? @default_service : @service
-      title = @title.nil? ? File.basename(@file) : @title
+      title = @title.nil? ? File.basename(@file, File.extname(@file)) : @title
 
       destination = @destination.nil? ? @default_destination : @destination
       if destination == PaperlessService::Finder::NO_MOVE && service == PaperlessService::FINDER.downcase

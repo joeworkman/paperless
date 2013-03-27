@@ -14,6 +14,7 @@ module Paperless
 			@description         = options['description']
 			@tags                = options['tags'].nil? ? Array.new : options['tags'].split
 			@date_stamp          = DateTime.now
+			@filename 			 = ''
 			@date_default_format = '%Y-%m-%d'
 			@matched             = false
 		end
@@ -27,6 +28,9 @@ module Paperless
 
 		def match(file,text)
 			return @matched if @matched
+
+			file_ext = File.extname(file)
+	        @filename = File.basename(file, file_ext)
 
 			if @condition == Paperless::DATE_VAR
 				@date    = date
@@ -57,6 +61,7 @@ module Paperless
 
 		def sub_var(attribute, value)
 			unless attribute.nil?
+				attribute.gsub!(/#{Paperless::FILENAME_VAR}/, @filename) 
 				attribute.gsub!(/#{Paperless::MATCH_VAR}/, value) 
 				attribute.gsub!(/#{Paperless::DATE_VAR}/, @date_stamp.strftime(@date_default_format))
 

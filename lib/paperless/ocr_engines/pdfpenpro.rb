@@ -23,6 +23,7 @@ module PaperlessOCR
           sleep 1
         end
         doc.close(:saving => :yes)
+        sleep 3
       rescue 
         puts "WARNING: There was an error OCRing the document with #{@engine}: #{$!}"
       end

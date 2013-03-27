@@ -3,11 +3,11 @@ include Appscript
 
 module PaperlessOCR
 
-  PDFPEN = 'PDFpen'
+  PDFPENPRO6 = 'PDFpenPro 6.app'
 
-	class PDFpen
+	class PDFpenPro6
 		def initialize
-      @engine = PaperlessOCR::PDFPEN
+      @engine = PaperlessOCR::PDFPENPRO6
       @app = app(@engine)
       @app.activate
 		end
@@ -17,7 +17,7 @@ module PaperlessOCR
         doc = @app.open MacTypes::Alias.path(options[:file])
         doc.ocr
 
-        app("System Events").processes[@engine].visible.set(false)
+        app("System Events").processes['PDFpenPro 6'].visible.set(false)
 
         while doc.performing_ocr.get
           sleep 1

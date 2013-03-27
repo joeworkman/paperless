@@ -18,6 +18,11 @@ Paperless can integrate with the following applications:
 * Evernote
 * DEVONThink Pro 
 
+## Paperless User Group
+
+Join the Paperless User Group on Glassboard <https://app.glassboard.com/web/invitation/code/akkmo>.
+
+
 ## Prerequisites
 
 The core of Paperless does not require OS X. However, all of the integrations are developed to use applications that run on OS X. Therefore, as the project currently stands, you will need to be running OS X. 
@@ -193,7 +198,7 @@ Since the `.paperless.rc` file will be hidden from Finder, it can be a challenge
 Here is a sample file to get you going. For information about the rules, check out the Rules section. 
 
     ---
-    :ocr_engine: pdfpenpro
+    :ocr_engine: pdfpenpro6
     :date_locale: us
     :date_format: '%Y-%m-%d'
     :date_default: filedate
@@ -270,8 +275,10 @@ Here is a sample file to get you going. For information about the rules, check o
     Paperless can leverage several applications in order to OCR your document. The OCR process will only get kicked off for PDF documents. 
 
     * `none` Disable OCR (default)
-    * `pdfpen` [PDFPen](http://jwurl.net/Wv3MTi) is an awesome app from Smile Software. 
-    * `pdfpenpro` [PDFPenPro](http://jwurl.net/XQpCOt) is their pro version. 
+    * `pdfpen6` [PDFPen 6](http://jwurl.net/ZVvwi7) is an awesome app from Smile Software. 
+    * `pdfpenpro6` [PDFPenPro 6](http://jwurl.net/ZVvAhI) is their pro version. 
+    * `pdfpen` PDFPen (legacy v5.x version) 
+    * `pdfpenpro` PDFPenPro (legacy v5.x version) 
     * `devonthinkpro` [DevonThink Pro](http://www.devontechnologies.com/products/devonthink/overview.html) has been a staple in the Mac community for years. 
 
 
@@ -297,7 +304,7 @@ As you see from the sample configuration file above, you can define multiple rul
        title: '<match> Statement <date=%Y-%m>'
 
 * Begin the rules definition with the `:rules:` declaration. 
-* Each new rule after much start the a ` - `.
+* Each new rule after much start the a ` - `. **Important**: there needs to be a space before the dash. 
 * Then you simply list out all of the rule fields. The only required fields for a rule are `description` , `scope` and `condition`
 
 You do not need to define a particular field if it does not pertain to that rule. You can also leave the value for a field blank and it is essentially the same as omitting it for the rule. 
@@ -391,6 +398,7 @@ The following basic date formats (and many derivatives of them) are searched for
 * December 29, 2012
 * 29 December 2012
 * 12/29/2012
+* December 2012
 
 ### Rule Variables
 
@@ -404,6 +412,9 @@ Where used, the `<date>` variable will be replaced the discovered date. If a dat
 
 You can override the the default format by adding it within the date variable like `<date=%Y-%m>`. In this example the date format will be set to **%Y-%m** instead of what is set in the date_default setting. 
 
+#### filename
+
+When you use the variable `<filename>` the original name of the file will be inserted. This could be helpful if you simply want to add to the file name or use the name of the file in the title of your note and still add more data such as a date.
 
 #### nomove
 

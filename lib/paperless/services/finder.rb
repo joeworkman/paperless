@@ -18,28 +18,34 @@ module PaperlessService
       destination = options[:destination]
       date        = options[:date]
       from_file   = options[:file]
-      title       = options[:title]
+      title       = options[:title] || File.basename(from_file, File.extname(from_file))
       tags        = options[:tags].collect!{|x| x="'#{x}'"} # Add quotes around each tag in case there is a space
 
       if destination == NO_MOVE || destination == File.dirname(from_file)
         new_filename = File.join(File.dirname(from_file), title + File.extname(from_file))
+        puts "New filename (1): #{new_filename}"
       else
         FileUtils.mkdir_p destination unless File.exists?(destination)
         new_filename = File.join(destination, title + File.extname(from_file))
+        puts "New filename (2): #{new_filename}"
       end
 
-      FileUtils.cp from_file, new_filename, :force => true
+      puts "Copying File..."
+      FileUtils.cp from_file, new_filename, :verbose => true
 
       time = Time.new(date.year, date.month, date.day)
+      puts "Modifying the time of the file to be #{time.to_s}"
       FileUtils.touch new_filename, {:mtime => time}
 
       if tags.length > 0
         # Add open meta tags to file
+        puts "Tagging file"
         system("#{OPENMETA} -p '#{new_filename}' -a #{tags.join(' ')}")
       end
 
       if options[:delete] && from_file != new_filename
-        FileUtils.rm from_file, :force => true
+        puts "Removing original file"
+        FileUtils.rm from_file, :force => true, :verbose => true
       end
     end
 

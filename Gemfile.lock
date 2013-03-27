@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paperless (0.1.0)
+    paperless (0.2.0)
       gli (= 2.5.4)
       markdown
       pdf-reader

@@ -79,6 +79,8 @@ lib/paperless/services/evernote.rb
 lib/paperless/services/finder.rb
 lib/paperless/services/devonthinkpro.rb
 lib/paperless/ocr_engines/acrobat.rb
+lib/paperless/ocr_engines/pdfpen6.rb
+lib/paperless/ocr_engines/pdfpenpro6.rb
 lib/paperless/ocr_engines/pdfpen.rb
 lib/paperless/ocr_engines/pdfpenpro.rb
 lib/paperless/ocr_engines/devonthinkpro.rb

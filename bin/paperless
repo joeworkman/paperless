@@ -131,6 +131,9 @@ desc 'Create a new note from a file'
 arg_name 'file_name'
 command :create do |c|
 
+  c.desc 'Dump the OCR text for the document to the terminal.'
+  c.switch :dump, :negatable => false, :default_value => false
+
   c.desc 'Open a prompt to rename the file before its processed through the rules.'
   c.switch :prompt, :negatable => false, :default_value => false
 
@@ -147,14 +150,15 @@ command :create do |c|
 
     args.each do |file|
 
-      if File.exists?(File.expand_path file) 
+      if File.exists?(File.expand_path file) && !File.directory?(File.expand_path file)
         file = File.expand_path file
       else
-        raise "File does not exist (#{file})"
+        raise "File does not exist or is a directory (#{file})"
       end
 
-      if options[:prompt] && !global_options[:simulate]
-        # Cannot rename the file in simulate mode since we dont want to change the file name
+      old_filename = nil
+
+      if options[:prompt]
         file_ext = File.extname(file)
         filename = File.basename(file, file_ext)
         user_input = `#{COCOADIALOG} standard-inputbox --title "Paperless Prompt" --informative-text "Rename your file before its processed with rules..." --text "#{filename}" --no-newline --string-output`.split("\n")
@@ -162,6 +166,10 @@ command :create do |c|
         if user_input[0].match(/ok/i) && user_input[1] != File.basename(file, file_ext)
           new_filename = File.join(File.dirname(file), user_input[1] + file_ext)
           puts "Renaming file based on input to #{new_filename}"
+          if global_options[:simulate]
+            # save the file name to rename it back later
+            old_filename = file
+          end
           File.rename(file, new_filename) 
           file = new_filename
         end
@@ -182,7 +190,7 @@ command :create do |c|
       file_ext = File.extname(file).gsub(/\./,'')
       if file_ext == Paperless::PDF_EXT && options[:ocr]
         puts "OCRing file..."
-        engine.ocr
+        engine.ocr(options[:dump])
       end
 
       if options[:proc_rules]
@@ -193,6 +201,11 @@ command :create do |c|
       if global_options[:simulate]
         puts "Simulating changes..."
         engine.print
+
+        if global_options[:simulate] && options[:prompt] && !old_filename.nil?
+          puts "Renaming file back to #{old_filename}"
+          File.rename(file, old_filename) 
+        end
       else
         puts "Saving #{file} to #{engine.service}"
         engine.create({:delete => options[:delete]})
