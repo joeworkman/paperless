@@ -8,7 +8,7 @@ Join the Paperless User Group on Glassboard <https://app.glassboard.com/web/invi
 
 ## Documentation
 
-Head over the to [Paperless Wiki](wiki).
+Head over the to [Paperless Wiki](https://github.com/joeworkman/paperless/wiki).
 
 ## Contributing
 
