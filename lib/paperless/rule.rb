@@ -17,6 +17,9 @@ module Paperless
 			@filename 			 = ''
 			@date_default_format = '%Y-%m-%d'
 			@matched             = false
+
+			# Automatically replace spaces with \s*. OCR tends to be wonky with spaces.
+			@condition = @condition.to_s.strip.gsub(/\s/,'\s*')
 		end
 
 		attr_reader :matched, :tags, :destination, :condition, :title, :date, :service

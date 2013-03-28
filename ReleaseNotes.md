@@ -2,9 +2,16 @@
 
 Join the Paperless User Group <https://app.glassboard.com/web/invitation/code/akkmo>
 
+
+## v0.2.3 (March 28, 2013)
+---
+1. Spaces inside each rule condition get replaced with '\s*'. This is to compensate for OCR's inaccuracies with white space.  
+
+
 ## v0.2.2 (March 27, 2013)
 ---
 1. The default rules file has been renamed to paperless.rules.yaml. The file still lives in the home folder. 
+
 
 
 ## v0.2.0 (March 27, 2013)

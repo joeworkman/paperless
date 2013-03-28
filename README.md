@@ -10,6 +10,12 @@ Join the Paperless User Group on Glassboard <https://app.glassboard.com/web/invi
 
 Head over the to [Paperless Wiki](https://github.com/joeworkman/paperless/wiki).
 
+
+## Release Notes
+
+Check out the [Release Notes](ReleaseNotes.md) for the latest details on what has changed.
+
+
 ## Contributing
 
 1. Fork it
