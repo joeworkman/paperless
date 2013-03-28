@@ -60,7 +60,7 @@ Since Paperless is a ruby gem, you can use the standard methodology to obtain up
 
 ## Usage
 
-Here is an overview of the options available to paperless along with some helpful examples. See below for how to set these values using a `.paperless.rc` config file.
+Here is an overview of the options available to paperless along with some helpful examples. See below for how to set these values using a `paperless.rules.yaml` config file.
 
 ### Accessing Help
 
@@ -113,7 +113,7 @@ Search for notes. This command has not been implemented yet.
  
 #### initconfig
 
-The `initconfig` command will automatically seed a new `.paperless.rc` config file with all of the default values. It will not create any rules though. You will have to create those on your own. 
+The `initconfig` command will automatically seed a new `paperless.rules.yaml` config file with all of the default values. It will not create any rules though. You will have to create those on your own. 
 
     NAME
         initconfig - Initialize the config file using current global options
@@ -130,7 +130,7 @@ The `initconfig` command will automatically seed a new `.paperless.rc` config fi
 
 #### editconfig
 
-Since the `.paperless.rc` file will be hidden from Finder, it can be a challenge for some people to figure out how to edit it. Use this command to open the file inside TextEdit. 
+Since the `paperless.rules.yaml` file will be hidden from Finder, it can be a challenge for some people to figure out how to edit it. Use this command to open the file inside TextEdit. 
 
 
 #### help
@@ -149,7 +149,7 @@ Since the `.paperless.rc` file will be hidden from Finder, it can be a challenge
 
 ### Global Options
 
-Its recommended that all the global settings be set inside the `.paperless.rc` file. However, it could be useful to override the settings in the config file via the following global command line options. For an explanation of each setting, you will need to refer to the **Configuration File** section below.
+Its recommended that all the global settings be set inside the `paperless.rules.yaml` file. However, it could be useful to override the settings in the config file via the following global command line options. For an explanation of each setting, you will need to refer to the **Configuration File** section below.
 
 The following options would be used most via command line. 
 
@@ -175,13 +175,13 @@ The following options would be used most via command line.
         --version                   -
 
 
-## Configuration File `.paperless.rc` 
+## Configuration File `paperless.rules.yaml` 
 
-Instead of passing a ton of options via command line, you can setup the configuration values in a file named `.paperless.rc`. This file should live in your home directory.
+Instead of passing a ton of options via command line, you can setup the configuration values in a file named `paperless.rules.yaml`. This file should live in your home directory.
 
 ### How to create the config file
 
-There is a command that automatically creates the `.paperless.rc` configuration file for you. It will also seed the settings in the file with the default global setting for each option. Run the following command to get this done. 
+There is a command that automatically creates the `paperless.rules.yaml` configuration file for you. It will also seed the settings in the file with the default global setting for each option. Run the following command to get this done. 
 
     $ paperless initconfig
 
@@ -189,7 +189,7 @@ There is a command that automatically creates the `.paperless.rc` configuration 
 
 ### How to edit your config file
 
-Since the `.paperless.rc` file will be hidden from Finder, it can be a challenge for some people to figure out how to edit it. There is a convenient built in command that will open the file inside TextEdit for you. 
+Simply open the `paperless.rules.yaml` config file in your favorite text editor. There is also a convenient built in command that will open the file inside TextEdit for you. 
 
     $ paperless editconfig
 
