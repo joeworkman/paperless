@@ -10,6 +10,7 @@ Join the Paperless User Group on Glassboard <https://app.glassboard.com/web/invi
 
 Head over the to [Paperless Wiki](https://github.com/joeworkman/paperless/wiki).
 
+Check out a quick 10 min overview that I threw together. Hopefully it will get your jumpstarted. <https://vimeo.com/62904356>
 
 ## Release Notes
 
