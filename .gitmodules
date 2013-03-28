@@ -1,0 +1,3 @@
+[submodule "paperless.wiki"]
+	path = paperless.wiki
+	url = git://github.com/joeworkman/paperless.wiki
