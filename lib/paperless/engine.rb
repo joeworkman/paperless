@@ -13,16 +13,6 @@ module Paperless
   TODAY     = 'today'
 
 	class Engine
-
-    PDFPEN_ENGINE         = 'pdfpen'
-    PDFPENPRO_ENGINE      = 'pdfpenpro'
-    PDFPENPRO6_ENGINE     = 'pdfpenpro6'
-    ACROBAT_ENGINE        = 'acrobat'
-    DEVONTHINKPRO_ENGINE  = 'devonthinkpro'
-    DEVONTHINKPRO_SERVICE = 'devonthinkpro'
-    FINDER_SERVICE        = 'finder'
-    EVERNOTE_SERVICE      = 'evernote'
-
     attr_reader :service
 
 		def initialize(options)
@@ -167,17 +157,11 @@ module Paperless
       end
 
 			puts "Running OCR on file with #{@ocr_engine}"
-      ocr_engine = case @ocr_engine
-        when /^#{PDFPENPRO6_ENGINE}$/i    then PaperlessOCR::PDFpenPro6.new
-        when /^#{PDFPEN6_ENGINE}$/i       then PaperlessOCR::PDFpen6.new
-        when /^#{PDFPENPRO_ENGINE}$/i     then PaperlessOCR::PDFpenPro.new
-        when /^#{PDFPEN_ENGINE}$/i        then PaperlessOCR::PDFpen.new
-        when /^#{ACROBAT_ENGINE}$/i       then PaperlessOCR::Acrobat.new
-        when /^#{DEVONTHINKPRO_ENGINE}$/i then PaperlessOCR::DevonThinkPro.new
-        else false
-      end
+
+      klass = Paperless::OCREngine.apply(@ocr_engine)
       
-      if ocr_engine
+      if klass  
+        ocr_engine = klass.new 
         ocr_engine.ocr({:file => @file})
 
         if dump
@@ -195,15 +179,10 @@ module Paperless
 		end
 
 		def create(options)
-      # May need to externalize this so other methods can access it.
-      service = case @service.nil? ? @default_service : @service
-        when /^#{EVERNOTE_SERVICE}$/i then PaperlessService::Evernote.new
-        when /^#{FINDER_SERVICE}$/i then PaperlessService::Finder.new
-        when /^#{DEVONTHINKPRO_SERVICE}$/i then PaperlessService::DevonThinkPro.new
-        else false
-      end
+      klass = Paperless::Service.apply(@service || @default_service)
 
-      if service
+      if klass
+        service = klass.new
         self.print
         
         destination = @destination.nil? ? @default_destination                      : @destination
@@ -228,7 +207,7 @@ module Paperless
       title = @title.nil? ? File.basename(@file, File.extname(@file)) : @title
 
       destination = @destination.nil? ? @default_destination : @destination
-      if destination == PaperlessService::Finder::NO_MOVE && service == PaperlessService::FINDER.downcase
+      if destination == Paperless::Services::Finder::NO_MOVE && service == Paperless::Services::Finder::IDENTIFIER
         destination = File.dirname(@file)
       end
 
