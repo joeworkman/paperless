@@ -27,7 +27,7 @@ module Paperless
 
 		def initialize(options)
       @destination         = nil
-      @service             = options[:default_service]
+      @service             = nil 
       @title               = nil
       @date                = DateTime.now
       @tags                = Array.new()
